@@ -1,0 +1,725 @@
+<!DOCTYPE HTML>
+
+<html>
+	
+	
+    <head>
+    
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        
+        <title>Use and abuse of law in Athenian Courts</title>
+        
+    </head>
+    
+    
+    <body>
+    
+    
+        <style type="text/css">
+        
+            #tab_wrapper
+            {
+                text-align:center;
+                font-family:Arial;
+                width:520px;
+                margin: 0 auto;
+                background-image:url("background.jpg");
+                background-repeat:repeat-y;
+                padding-bottom:1px;
+                padding-top:1px;
+            }
+			
+			#buttons_bar
+			{
+				background:white;
+				margin-top:30px;
+			}
+			
+			.date
+			{
+				font-size:1.5em!important;
+				font-weight:bold;
+				margin:40px 0px 15px 0px;
+			}
+			
+			.subtitle
+			{
+				font-size:1.3em!important;
+				font-weight:bold;
+			}
+            
+            .subtitle a
+            {
+                color:black;
+                text-decoration:none;
+            }
+            
+            .tab_button
+            {
+                -webkit-user-select:none;
+                -moz-user-select:none;
+                user-select:none;
+                cursor:pointer;
+                text-align:center;
+                padding:10px 20px;
+                display:inline-block;
+            }
+            
+            #organisers
+            {
+                font-family:Arial;
+                font-size:1em;
+                text-align:center;
+                font-weight:bold;          
+                margin-bottom:30px;
+            }
+            
+            .group
+            {
+                position:relative;
+                margin:10px 0px 10px 22px;
+				width:455px;
+                padding:30px 10px 30px 10px;
+				text-align:justify;
+            }
+            
+            .talk
+            {
+                margin-bottom:20px;
+                color:black;
+            }
+            
+            .talk:hover
+            {
+                color:black;
+                background-color:rgba(0, 0, 0, 0.06);
+            }
+            
+            .talk a
+            {
+                color:black;
+            }
+            
+            .talk a:hover, .subtitle a:hover
+            {
+                color:black;
+            }
+			
+			.speaker
+			{
+				font-weight:bold;
+			}
+            
+            .quote
+            {
+                color:black;
+            }
+            
+            .button
+            {
+                cursor:pointer;
+                width:20px;
+                height:20px;
+                opacity:1;
+            }
+			
+			.styled_hr
+			{			
+				border:0!important;
+				padding:0!important;
+				margin:0!important;
+				height:1px!important;
+				background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0))!important; 
+				background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0))!important; 
+				background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0))!important; 
+				background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0))!important; 
+			}
+            
+            .button:hover
+            {
+                opacity:0.8;
+            }
+            
+            #sponsors_message
+            {
+                display:block;
+                font-weight:bold;
+                margin-bottom:20px;
+            }
+            
+            .sponsor
+            {
+                display:inline-block;
+                font-size:35px;
+                margin:10px;
+            }
+            
+            .sponsor a
+            {
+                color:black;
+                text-decoration:none;
+            }
+
+            .page-title
+            {
+                font-family:Arial;
+                font-size: 24px;
+                margin: 20px 0px;
+            }
+
+            .page-wrapper
+            {
+                text-align: center;
+            }
+        
+        </style>
+    
+        <script src='http://code.jquery.com/jquery-latest.js' type='text/javascript'></script>
+        <script type="text/javascript">
+
+            $(document).ready(function()
+            {
+                // Hack to bypass Silva layout and place image before title
+                $("#col3_content > h2").before("<div id='logo' class='image-center'><img src='logo.png' width=200 height=200></div>");
+                
+                // Center title
+                $("#col3_content > h2").css("text-align", "center");
+                                
+                // Talks are selected by default
+                selectTalks();
+            });
+            
+            function selectTalks()
+            {
+                clearTab();
+                
+                // Select button
+                $("#talks_button").css("background", "black");
+                $("#talks_button").css("color", "white");
+                
+                // Populate tab
+                $("#talks_tab").show();                
+            }
+            
+            function selectItunes()
+            {
+                clearTab();
+                
+                // Select button
+                $("#itunes_button").css("background", "black");
+                $("#itunes_button").css("color", "white");
+                
+                // Populate tab
+                $("#itunes_tab").show();                
+            }
+            
+            function selectInterviews()
+            {
+                clearTab();
+                
+                // Select button
+                $("#interviews_button").css("background", "black");
+                $("#interviews_button").css("color", "white");
+                
+                // Populate tab
+                $("#interviews_tab").show();
+            }
+            
+            function selectGallery()
+            {
+                clearTab();
+                
+                // Select button
+                $("#gallery_button").css("background", "black");
+                $("#gallery_button").css("color", "white");
+                
+                // Populate tab
+                $("#gallery_tab").show();
+            }
+            
+            function selectNews()
+            {
+                clearTab();
+                
+                // Select button
+                $("#news_button").css("background", "black");
+                $("#news_button").css("color", "white");
+                
+                // Populate tab
+                $("#news_tab").show();
+            }
+            
+            function clearTab()
+            {
+                $("#talks_button").css("background", "white");
+                $("#talks_button").css("color", "black");
+				
+                $("#itunes_button").css("background", "white");
+                $("#itunes_button").css("color", "black");
+				
+                $("#interviews_button").css("background", "white");
+                $("#interviews_button").css("color", "black");
+                
+				$("#gallery_button").css("background", "white"); 
+                $("#gallery_button").css("color", "black");
+                
+				$("#news_button").css("background", "white"); 
+                $("#news_button").css("color", "black");
+
+				
+                $("#talks_tab").hide();
+                $("#itunes_tab").hide();
+                $("#interviews_tab").hide();
+                $("#gallery_tab").hide();
+                $("#news_tab").hide();
+            }
+
+        </script>
+
+        <div class="page-wrapper">
+            <div class="page-title">Use and abuse of law in Athenian Courts</div>
+            <div id="organisers">Organisers: I. Giannadaki, C. Carey</div>
+
+            <div id="tab_wrapper">
+
+                <div id="buttons_bar">
+
+                    <div class="tab_button" id="talks_button" onclick="selectTalks();">Talks</div>
+                    <div class="tab_button" id="itunes_button" onclick="selectItunes();">iTunes Album</div>
+                    <div class="tab_button" id="interviews_button" onclick="selectInterviews();">Interviews</div>
+                    <div class="tab_button" id="gallery_button" onclick="selectGallery();">Gallery</div>
+                    <div class="tab_button" id="news_button" onclick="selectNews();">News</div>
+
+                </div>
+
+                <div id="content_wrapper">
+
+                    <div id="talks_tab">
+
+                        <div class="group">
+
+                            <div class="date" style="margin-top:0px">
+                                <span>Tuesday 16th April</span>
+                                <hr class="styled_hr">
+                            </div>
+
+                            <div class="subtitle">
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=ibLDk_3GAqQ"><span>Welcome: C. CAREY</span></a>
+                            </div>
+
+                            <br>
+
+                            <div class="subtitle">
+                                <span>Key-note Speech, Chair: C.CAREY</span>
+                            </div>
+
+                            <div class="talk">
+                                <!--<a href="audio/Michael M. Gagarin (University of Texas) Abuse is in the Eye of the Beholder (key-note speech).mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>!-->
+                                <a href="handouts/Michael M. Gagarin (University of Texas) ‘Abuse is in the Eye of the Beholder’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">M. Gagarin</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=f79c7FRA-FI"><span class="name">Abuse is in the Eye of the Beholder (keynote speech)</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="subtitle">
+                                <span>SESSION 1, Chair: C. Carey</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Ilias  I. Arnaoutoglou (Academy of Athens) What is (ab)use of law in 4th-century Athens.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Ilias  I. Arnaoutoglou (Academy of Athens) ‘What is (ab)use of law in 4th-century Athens’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">I. Arnaoutoglou</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=9wNdgGtTyZw"><span class="name">«…τους νόμους διαστρέφειν...» What is (ab)use of law in 4th-century Athens?</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Robin R. Osborne (Cambridge University) The Elasticity of the Athenian Law.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <span class="speaker">R. Osborne</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=fcvq5AcddE8"><span class="name">The Elasticity of the Athenian Law</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Edward E. Harris (Durham University) The Athenian View of an Athenian Trial.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Edward E. Harris (Durham University) ‘The Athenian View of an Athenian Trial’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">E. M. Harris</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=U-is0vuBwaA"><span class="name">The Athenian View of an Athenian Trial</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+
+
+                            <div class="date">
+                                <span>Wednesday 17th April</span>
+                                <hr class="styled hr">
+                            </div>
+
+                            <div class="subtitle">
+                                <span>SESSION 1, Chair: L. HORVATH</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Athanasios A. Efstathiou (Ionian University) Playing games with law -  the case of Demosthenes and Aeschines.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Athanasios A. Efstathiou (Ionian University) ‘Playing games with law the case of Demosthenes and Aeschines’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">A. Efstathoiu</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=6ff_oicTxXc"><span class="name">Playing games with law: the case of Demosthenes and Aeschines</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Lene L. Rubinstein (RHUL) Clauses out of context -  partial citation of statutes in Attic forensic oratory.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Lene L. Rubinstein (RHUL) ‘Clauses out of context partial citation of statutes in Attic forensic oratory’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">L. Rubinstein</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=yna2suavpgc"><span class="name">Clauses out of context: partial citation of statutes in Attic forensic oratory</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Aurian A. L. Delli Pizzi (University of Liege ) Impiety and the Legal Sphere - Analysis of Athenian Court Speeches.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Aurian A. L. Delli Pizzi (University of Liege ) ‘Impiety and the Legal Sphere Analysis of Athenian Court Speeches’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">A. L. Delli Pizzi</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=MnUeFPW_9D8"><span class="name">Impiety and the Legal Sphere: Analysis of Athenian Court Speeches</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="subtitle">
+                                <span>SESSION 2, Chair: M. GAGARIN</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/David D. Mirhady (SFU) Crime-scene Athens -  Homicide and the Problem of Place.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <span class="speaker">D. Mirhady</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=mNG1Xmj5nRA"><span class="name">Crime-scene Athens: Homicide and the Problem of Place</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Mike M. Edwards (University of Wales, Trinity St Davids) The use and abuse of law in the speeches of Antiphon.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Mike M. Edwards (University of Wales, Trinity St David’s) ‘The use and abuse of law in the speeches of Antiphon’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">M. Edwards</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=WTNt_qIXzUE"><span class="name">The use and abuse of law in the speeches of Antiphon</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/David D. Phillips (UCLA) Athenian Homicide Law and the Model Penal Code.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <span class="speaker">D. Phillips</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=f8TIDJn408g"><span class="name">Athenian Homicide Law and the Model Penal Code</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="subtitle">
+                                <span>SESSION 3, Chair: M. EDWARDS</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Christos C. Kremmydas (RHUL) Anakrisis and the framing of argumentative strategies in Athenian Public trials.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Christos C. Kremmydas  (RHUL) ‘Anakrisis and the framing of argumentative strategies in Athenian Public trials’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">C. Kremmydas</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=e23uo4Fxfvw"><span class="name">Anakrisis and the framing of argumentative strategies in Athenian Public trials</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Myrto M. Aloumpi (Oxford University) Law, hybris, and the untold story of Meidias` offence (Dem. 21).mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Myrto M. Aloumpi (Oxford University) ‘Law, hybris, and the untold story of Meidias’ offence (Dem. 21)’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">M. Aloumpi</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=Kt0MGbeQ8AM"><span class="name">Law, hybris, and the untold story of Meidias' offence (Dem. 21)</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Brenda B. Griffith-Williams (UCL) Use or Abuse of diamartyria in an Athenian inheritance case.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Brenda B. Griffith-Williams (UCL) ‘Use or Abuse of diamartyria in an Athenian inheritance case’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">B. Griffith-Williams</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=VnpNXZj60xQ"><span class="name">Use or Abuse of <i>diamartyria</i> in an Athenian inheritance case?</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="subtitle">
+                                <span>SESSION 4, Chair: R. OSBORNE</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Lazlo L. Horvath (ELTE Eotvos Jozsef Collegium) Delaying the legal Procedure.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <span class="speaker">L. Horv&aacute;th</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=kwo7IX2glXQ"><span class="name">Delaying the legal Procedure</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/N. Sato (Kobe University) Abusing Legal Procedures for Impeding Legal Procedure mp3.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/N. Sato (Kobe University) ‘Abusing Legal Procedures for Impeding Legal Procedure’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">N. Sato</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=iOysh3gQ52s"><span class="name">Abusing Legal Procedures for Impeding Legal Procedure</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+
+
+                            <div class="date">
+                                <span>Thursday 18th April</span>
+                                <hr class="styled hr">
+                            </div>
+
+                            <div class="subtitle">
+                                <span>SESSION 1, Chair: C. KREMMYDAS</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Frederica F. Carugati (Stanford University) Nie Pozwalam! The patrios politeia debate and the procedure of graphe paranomon.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Frederica F. Carugati (Stanford University) ‘Nie Pozwalam! The patrios politeia debate and the procedure of graphe paranomon.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <a href="handouts/Frederica F. Carugati (Stanford University) ‘Nie Pozwalam! The patrios politeia debate and the procedure of graphe paranomon - Powerpoint presentati.pdf"><img class="button" title="View presentation" src="presentation.png"></a>
+                                <span class="speaker">F. Carugati</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=sWK1aw79aeA"><span class="name">Nie Pozwalam! The <i>patrios politeia</i> debate and the procedure of graphe paranomon revisited</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Victoria V. Wohl (University of Toronto) Jurisdiction and jurisprudence in D. 23.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Victoria V. Wohl (University of Toronto) ‘Jurisdiction and jurisprudence in D. 23’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">V. Wohl</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=HBBjD0NgTSY"><span class="name">Jurisdiction and jurisprudence in D. 23</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/I. Giannadaki (UCL) Throwing sand in the eyes of the dikastai.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/I. Giannadaki (UCL) ‘Throwing sand in the eyes of the dikastai’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">I. Giannadaki</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=thfCY7RDJFw"><span class="name">Throwing sand in the eyes of the <i>dikastai</i></span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Mirko M. Canevaro (University of Edinburgh) Laws against Laws- the Athenian ideology of legislation and its abuses.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Mirko M. Canevaro (University of Edinburgh) ‘Laws against Laws the Athenian ideology of legislation and its abuses’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">M. Canevaro</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=mrrkSKEl8VM"><span class="name">Laws against Laws: the Athenian ideology of legislation and its abuses</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="subtitle">
+                                <span>SESSION 2, Chair: B. GRIFFITH-WILLIAMS</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Eleni E. Volonaki (University of the Peloponnese) The abuse of the eisangelia procedure in the fourth century B.C.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <span class="speaker">E. Volonaki</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=uNg6_x49Ueg"><span class="name">The abuse of the <i>eisangelia</i> procedure in the fourth century B.C</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Adriaan A. Lanni (Harvard University) Law, Norms, and Persuasion in Against Leocrates.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <span class="speaker">A. Lanni</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=raqOfE_dX9E"><span class="name">Law, Norms, and Persuasion in Against Leocrates</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/R. Hatzilambrou (University of Athens) Isaios` abuse of law - a scholarly misconception.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/R. Hatzilambrou (University of Athens) ‘Isaios’ abuse of law a scholarly misconception’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">R. Hatzilambrou</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=vrTMwrocFPk"><span class="name">Isaios' abuse of law: a scholarly misconception?</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="subtitle">
+                                <span>SESSION 3, Chair: A. LANNI</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Gerhard G. Thur (Austrian Academy of Sciences) Misuse of the laws of homologein, ancient and modern.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Gerhard G. Thur (Austrian Academy of Sciences) ‘Misuse of the laws of homologein, ancient and modern’ merged.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">G. Th&uuml;r</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=UfibjkapvmY"><span class="name">Misuse of the laws of <i>homologein</i>, ancient and modern</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Kostas K. Apostolakis (University of Crete) Liturgies and the Rhetoric of Law in Fourth-century Athens.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Kostas K. Apostolakis (University of Crete) ‘Liturgies and the Rhetoric of Law in Fourth-century Athens’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">K. Apostolakis</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=RI2enfG96_0"><span class="name">Liturgies and the Rhetoric of Law in Fourth-century Athens</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Dimos D. Spatharas (University of Crete) Emotions and the Law.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Dimos D. Spatharas (University of Crete) ‘Emotions and the Law’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">D. Spatharas</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=jfw7H3DGCK8"><span class="name">Emotions and the Law</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="subtitle">
+                                <span>SESSION 4, Chair: V. WOHL</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/Emiliano E. Buis (University of Buenos Aires) Mocking justice - Aristophanes and the literary (ab)use of law in Old Comedy.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/Emiliano E. Buis (University of Buenos Aires) ‘Mocking justice Aristophanes and the literary (ab)use of law in Old Comedy’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">E. Buis</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=WiIv5cmOYF4"><span class="name">Mocking justice: Aristophanes and the literary (ab)use of law in Old Comedy</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="audio/C. Carey (UCL) Legal Play in Menander.mp3"><img class="button" title="Listen to this talk" src="audio.png"></a>
+                                <a href="handouts/C. Carey (UCL) ‘Legal Play in Menander’.pdf"><img class="button" title="View handout" src="handout.png"></a>
+                                <span class="speaker">C. Carey</span>
+                                <span class="delimiter">-</span>
+                                <span class="quote">"</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=qwSijMlf3M4"><span class="name">Legal Play in Menander</span></a>
+                                <span class="quote">"</span>
+                            </div>
+
+                            <hr class="styled hr">
+                            <br>
+
+                            <div class="talk">
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=SrnV1M8AxFY"><span>Highlights of the conference</span></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div id="itunes_tab">
+
+                        <div class="group">
+
+                            <div class="talk">
+                                <span>The organisers are pleased to announce that the oral presentations are also available on the iTunes Store, accessible to a wider audience, for use both by professionals in research and teaching and by interested members of the public.</span>
+                            </div>
+
+                            <div class="talk">
+                                <a href="https://itunes.apple.com/gb/itunes-u/international-conference-use/id735219633?mt=10">Please follow this link to be directed to our iTunes album.</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="interviews_tab">
+
+                        <div class="group">
+
+                            <div class="talk">
+                                <span class="speaker">C. Carey</span>
+                                <span class="delimiter">-</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=jDiH7jyR3mo"><span class="name">Opening thoughts</span></a>
+                            </div>
+
+                            <div class="talk">
+                                <span class="speaker">Speakers' interviews</span>
+                                <span class="delimiter">-</span>
+                                <a title="Watch video" href="http://www.youtube.com/watch?v=8R0-3duNAHo"><span class="name">Closing comments</span></a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div id="gallery_tab">
+
+                        <div class="group">
+
+                            <iframe align="center" src="https://www.flickr.com/photos/79788424@N04/9304688794/in/album-72157634673987418/player" width="440" height="440" frameBorder="0" scrolling="no"></iframe>
+
+                        </div>
+                    </div>
+
+                    <div id="news_tab">
+
+                        <div class="group">
+
+                            <div class="article">
+                                <div class="date" style="margin-top:0px;">
+                                    <span>Monday 5th August 2013</span>
+                                    <hr class="styled_hr">
+                                </div>
+
+                                <div class="talk">
+                                    <span class="name">After the successful 'Use and Abuse' conference in April 2013 and the publication of the talks online, the organisers are pleased to announce that they are also planning to publish the proceedings in book form. 'The best is yet to come'. More updates to follow soon.</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div id="sponsors" class="group">
+
+                    <span id="sponsors_message">Generously sponsored by</span>
+
+                    <div class="sponsor"><a href="http://www.ucl.ac.uk/development">UCL Alumni</a></div>
+                    <div class="sponsor"><a href="http://www.ucl.ac.uk/ah/figs/funding">UCL FIGS</a></div>
+                    <div class="sponsor"><a href="http://www.icls.sas.ac.uk/"><img src="ics-logo_medium2.jpg"></a></div>
+                    <div class="sponsor"><a href="http://www.leventisfoundation.org/en/projects/universities-scientific-institutions"><img src="A.G.-Leventis-Foundation-Logo.png"></a></div>
+                    <div class="sponsor"><a href="http://www.classicalassociation.org/"><img src="LogoCA.jpg"></a></div>
+
+                </div>
+
+            </div>
+        </div>
+        
+    </body>
+    
+    
+</html>
